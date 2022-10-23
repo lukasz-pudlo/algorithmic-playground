@@ -23,8 +23,6 @@ def floodFill(image, x, y, newChar, oldChar=None):
 
     image[y][x] = newChar
 
-    # printImage(image)
-
     if y + 1 < HEIGHT and image[y + 1][x] == oldChar:
         floodFill(image, x, y + 1, newChar, oldChar)
     if y - 1 >= 0 and image[y - 1][x] == oldChar:
@@ -45,5 +43,5 @@ def printImage(image):
 
 
 printImage(im)
-floodFill(im, 3, 3, 'o')
+floodFill(im, 3, 3, 'O')
 printImage(im)
