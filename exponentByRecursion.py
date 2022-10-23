@@ -4,15 +4,17 @@ st = time.process_time()
 
 
 def exponentialise(number, exponent):
-    print('When number is', number, 'and exponent is', exponent,
-          'we can perform a simple calculation using number ** exponent', number ** exponent)
     if exponent == 1:
         return number
-    else:
-        return exponentialise(number, exponent - 1) * number
+    elif number % 2 == 0:
+        result = exponentialise(number, exponent // 2)
+        return result * result
+    elif number % 2 == 1:
+        result == exponentialise(number, exponent // 2)
+        return result * result * number
 
 
-print(exponentialise(2, 7))
+print(exponentialise(1000, 100000))
 
 et = time.process_time()
 

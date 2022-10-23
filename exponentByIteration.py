@@ -11,8 +11,7 @@ def exponentialise(number, exponent):
     return result
 
 
-time.sleep(3)
-print(exponentialise(3, 10000))
+print(exponentialise(1000, 100000))
 
 et = time.process_time()
 final_result = et * 1000

@@ -1,0 +1,2 @@
+if the len of list is not 1
+the function will be called recursively but on a shorter list that is without its last element
