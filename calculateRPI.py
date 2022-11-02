@@ -1,6 +1,7 @@
 def calculateRPI():
-    print("We will calculate the value of the RPI for July 2011. The value of the RPI in January 2011 was 229.0")
-    JanuaryRPI = 229.0
+    print("")
+    previousRPI = float(
+        input("What was the RPI at the point in time of comparison?     "))
     valuesKnownBool = input("Do you know your price ratios and weights? y/n ")
     if valuesKnownBool == 'y':
         numberOfCategories = int(input("How many categories? "))
@@ -13,7 +14,7 @@ def calculateRPI():
             rw = r * w
             items.append({'w': w, 'rw': rw})
 
-        calculateAllItemsPriceRatio(JanuaryRPI, items)
+        calculateAllItemsPriceRatio(previousRPI, items)
 
     else:
         numberOfProducts, totalExpenditure = productsAndExpenditure()
@@ -53,7 +54,7 @@ def inputForEachItem(totalExpenditure, items):
     return items
 
 
-def calculateAllItemsPriceRatio(JanuaryRPI, items):
+def calculateAllItemsPriceRatio(previousRPI, items):
     sumOfProducts = 0
     sumOfWeights = 0
     for item in items:
@@ -61,8 +62,8 @@ def calculateAllItemsPriceRatio(JanuaryRPI, items):
         sumOfWeights += item['w']
 
     allItemsPriceRatio = sumOfProducts / sumOfWeights
-    JulyRPI = JanuaryRPI * allItemsPriceRatio
-    print("The RPI in July 2011 is %.1f" % JulyRPI)
+    currentRPI = previousRPI * allItemsPriceRatio
+    print("The current RPI is %.1f" % currentRPI)
 
 
 calculateRPI()
